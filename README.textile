@@ -1,0 +1,3 @@
+h1. Madama JJ Mobile Site
+
+The purpose of this project is to build an example mobile site using JQuery Mobile
