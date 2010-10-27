@@ -1,0 +1,34 @@
+<!DOCTYPE html>  
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>  
+  <script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script>  
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+</head>
+<body>
+  <div data-role="page" data-theme="e">
+    <div data-role="header" data-position="fixed"> 
+  		<h1>Contact Us</h1> 
+  	</div>
+    <div data-role="content">
+      <form id="contact_form">
+        <div data-role="fieldcontain">
+      	  <label for="name">Name:</label>
+          <input type="text" name="name" id="name" value=""  />
+        </div>
+        <div data-role="fieldcontain">
+      	  <label for="phone">Phone:</label>
+          <input type="text" name="phone" id="phone" value=""  />
+        </div>        
+        <div data-role="fieldcontain">
+      	  <label for="textarea">Message:</label>
+          <textarea cols="40" rows="10" name="textarea" id="textarea"></textarea>
+        </div>
+        <input type="submit" value="Send!" />       
+      </form>      
+    </div>
+  </div>
+</body>
+</html>
