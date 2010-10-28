@@ -1,25 +1,50 @@
 <!DOCTYPE html>  
 <html>
 <head>
+  <title>Madama Jiu-Jitsu Academy</title>
+  <!-- madamajj.com -->
+  <!--script type="text/javascript" src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAA-k7GzvVFUWWR0i58w3L6axSgvo5CSwAbv25SwiVP_YVPyNBk4BQXZR1cTXyc92nihIy9rG_8_1gK7Q"></script-->
+  <!-- Localhost Google Maps API key -->
+  <!--script type="text/javascript" src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAvZMU4-DFRYtw1UlTj_zc6hT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQcT1h-VA8wQL5JBdsM5JWeJpukvw"></script-->
+  <!-- vonagenetworks.net -->
+  <script type="text/javascript" src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAA-k7GzvVFUWWR0i58w3L6axQ_88BRgG2SbMa3ZO_Bh6F4-ofCEhRwBh2JAq-PAOSbX2bltMgJ9PTLsQ"></script>
+
   <script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>  
-  <script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script>  
+  <script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script>
+  <script type="text/javascript" src="javascripts/jquery.gmap-1.1.0-min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $( '[data-role=page]' ).live('pageshow', function(event){
+        console.log(event.target);
+        var $et = $( event.target ), pageID = '#location';
+        if( $et.is( pageID )  || $et.children(0).is( pageID ) ){
+          options = {
+            address:'1174+Fischer+Blvd+Toms+River,NJ',
+            zoom:14,
+            markers: [{address:'1174+Fischer+Blvd+Toms+River,NJ',html: 'Madama JJ Academy<br>1174 Fischer Blvd<br>Toms River, NJ'}]
+          };
+          $('#map').gMap(options);
+        }
+      });
+    });
+  </script>  
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <link rel="apple-touch-startup-image" href="images/startup.png">
-  <!--link rel="apple-touch-icon" href="images/custom_icon.png"/-->
+  <link rel="apple-touch-icon" href="apple-touch-icon-precomposed.png"/>
 </head>
 <body>
   <div data-role="page">
-    <div data-role="header" data-position="fixed"> 
-  		<h1>Madama Jiu-Jitsu</h1>
-  		<img src="images/main_menu_logo.jpg"/>
+    <div data-role="header" data-position="fixed" style="line-height:40px;">
+  		<img src="images/madama-header.png" style="vertical-align:middle"/>
   	</div>
     <div data-role="content">   
       <ul data-role="listview">
-      	<li><a href="http://madamajj.com/feed/" rel="external">News</a></li>
+      	<li><a href="site.php">News</a></li>
+      	<li><a href="#">Techniques</a></li>
       	<li><a href="location.html">Location</a></li>
-      	<li><a href="http://www.madamajj.com" rel="external">Visit Website</a></li>
+      	<li><a href="http://www.madamajj.com" rel="external">Visit MadamaJJ.com</a></li>
       	<li><a href="contact.html">Contact Us</a></li>
       </ul>
     </div>

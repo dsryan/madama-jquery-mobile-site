@@ -19,7 +19,7 @@
 <div data-role="page">  
   
    <header data-role="header" class="<?php echo $siteName; ?>">  
-      <h1><?php echo 'Madama JJ News'; ?></h1>  
+      <h1><?php echo 'News'; ?></h1>  
    </header>  
   
    <div data-role="content">  
@@ -37,8 +37,8 @@
       </ul>  
    </div>  
   
-   <footer data-role="footer" class="<?php echo 'Madama JJ'; ?>">  
-      <h4> www.madamajj.com</h4>  
+   <footer data-role="footer" class="<?php echo $siteName; ?>">  
+      <h4 style="font-size:smaller">www.madamajj.com</h4>  
    </footer>  
 </div>  
   

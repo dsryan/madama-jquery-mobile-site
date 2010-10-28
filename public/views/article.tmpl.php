@@ -17,7 +17,7 @@
 <div data-role="page">  
   
    <header data-role="header" class="<?php echo $siteName; ?>">  
-      <h1> <?php echo 'Madama JJ News'; ?> </h1>  
+      <h1> <?php echo 'News'; ?> </h1>  
    </header>  
   
    <div data-role="content">  
