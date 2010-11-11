@@ -31,7 +31,7 @@
                    <?php echo $item->title; ?>  
                  </a>  
               </h2>  
-              <span class="ui-li-count"><?php echo $item->comments[1]; ?> </span>  
+              <!--span class="ui-li-count"><?php echo $item->comments[1]; ?> </span-->  
            </li>  
         <?php  } ?>
       </ul>  

@@ -13,7 +13,12 @@
   <script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script>
   <script type="text/javascript" src="javascripts/jquery.gmap-1.1.0-min.js"></script>
   <script>
-    $(document).ready(function(){
+    $(document).ready(function() {
+      $("li.clicker").click(function(){
+        window.location=$(this).find("a").attr("href");
+        return false;
+      });
+      
       $( '[data-role=page]' ).live('pageshow', function(event){
         console.log(event.target);
         var $et = $( event.target ), pageID = '#location';
@@ -44,7 +49,7 @@
       	<li><a href="site.php">News</a></li>
       	<li><a href="#">Techniques</a></li>
       	<li><a href="location.html">Location</a></li>
-      	<li><a href="http://www.madamajj.com" rel="external">Visit MadamaJJ.com</a></li>
+      	<li class="clicker"><a href="http://www.madamajj.com" rel="external">Visit MadamaJJ.com</a></li>
       	<li><a href="contact.html">Contact Us</a></li>
       </ul>
     </div>
