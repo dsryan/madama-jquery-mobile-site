@@ -1,4 +1,8 @@
-<?php 
+<?php
+ini_set('display_errors', 'On');
+error_reporting(E_ALL);
+
+$category = $_GET['category'];
 
 $siteName = empty($_GET['siteName']) ? 'madamajj' : $_GET['siteName'];
 
@@ -21,23 +25,33 @@ $siteName = empty($_GET['siteName']) ? 'madamajj' : $_GET['siteName'];
 //    $siteName = 'nettuts';  
 // }
 
-$cache = dirname(__FILE__) . "/cache/madama";
-
+if (empty($category))
+  $cache = dirname(__FILE__) . "/cache/news";
+else
+  $cache = dirname(__FILE__) . "/cache/$category";
+  
 // Re-cache every three hours  
-if( filemtime($cache) < (time() - 10800) ) {
+if( !file_exists($cache) || filemtime($cache) < (time() - 10800) ) {
+  //echo "getting feed and recreating cache file: $cache";
   if ( !file_exists(dirname(__FILE__) . '/cache') ) {  
     mkdir(dirname(__FILE__) . '/cache', 0777);  
-  } 
+  }
   // grab the site's RSS feed, via YQL
-  // YQL query (SELECT * from feed ... ) // Split for readability  
-  $path = "http://query.yahooapis.com/v1/public/yql?q=";  
-  $path .= urlencode("SELECT * FROM feed WHERE url='http://www.madamajj.com/feed'");  
+  // YQL query (SELECT * from feed ... ) // Split for readability    
+  $path = "http://query.yahooapis.com/v1/public/yql?q=";
+  if (empty($category))
+    $path .= urlencode("SELECT * FROM feed WHERE url='http://www.madamajj.com/feed'");
+  else
+    $path .= urlencode("SELECT * FROM feed WHERE url='http://www.madamajj.com/category/$category/feed'");
   $path .= "&format=json";
+  // echo $path;  
   
   $feed_string = file_get_contents($path,true);
-
+  // echo ($feed_string);
+  
   // Decode that shizzle  
   $feed = json_decode($feed_string);
+  // echo $feed->query->count;
 
   // If something was returned, cache  
   if ( is_object($feed) && $feed->query->count ) {  

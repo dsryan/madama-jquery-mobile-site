@@ -9,31 +9,13 @@
   <!-- vonagenetworks.net -->
   <script type="text/javascript" src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAA-k7GzvVFUWWR0i58w3L6axQ_88BRgG2SbMa3ZO_Bh6F4-ofCEhRwBh2JAq-PAOSbX2bltMgJ9PTLsQ"></script>
 
-  <script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>  
-  <script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+  <script src="javascripts/custom_code.js"></script>
+  <script src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+  
   <script type="text/javascript" src="javascripts/jquery.gmap-1.1.0-min.js"></script>
-  <script>
-    $(document).ready(function() {
-      $("li.clicker").click(function(){
-        window.location=$(this).find("a").attr("href");
-        return false;
-      });
-      
-      $( '[data-role=page]' ).live('pageshow', function(event){
-        console.log(event.target);
-        var $et = $( event.target ), pageID = '#location';
-        if( $et.is( pageID )  || $et.children(0).is( pageID ) ){
-          options = {
-            address:'1174+Fischer+Blvd+Toms+River,NJ',
-            zoom:14,
-            markers: [{address:'1174+Fischer+Blvd+Toms+River,NJ',html: 'Madama JJ Academy<br>1174 Fischer Blvd<br>Toms River, NJ'}]
-          };
-          $('#map').gMap(options);
-        }
-      });
-    });
-  </script>  
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css" />
+
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <link rel="apple-touch-startup-image" href="images/startup.png">
@@ -46,8 +28,9 @@
   	</div>
     <div data-role="content">   
       <ul data-role="listview">
-      	<li><a href="site.php">News</a></li>
-      	<li><a href="#">Techniques</a></li>
+      	<li><a href="site.php?category=news">News</a></li>
+      	<li><a href="site.php?category=events">Events</a></li>
+      	<li><a href="site.php?category=techniques">Techniques</a></li>
       	<li><a href="location.html">Location</a></li>
       	<li class="clicker"><a href="http://www.madamajj.com" rel="external">Visit MadamaJJ.com</a></li>
       	<li><a href="contact.html">Contact Us</a></li>

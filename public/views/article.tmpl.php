@@ -6,11 +6,9 @@
   
    <title> Madama Jiu-Jitsu Academy </title>   
   
-   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css" />  
-   <!--link rel="apple-touch-icon" href="img/tutsTouchIcon.png" /-->  
-  
-   <script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>  
-   <script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script>  
+   <script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+   <script src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
 </head>
 <body>   
   
