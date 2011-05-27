@@ -3,10 +3,10 @@ $(document).bind("mobileinit", function() {
 });
 
 $(document).ready(function() {
-  $("li.clicker").click(function(){
-    window.location=$(this).find("a").attr("href");
-    return false;
-  });
+  // $("li.clicker").click(function(){
+  //   window.location=$(this).find("a").attr("href");
+  //   return false;
+  // });
   
   $( '[data-role=page]' ).live('pageshow', function(event){
     //console.log(event.target);

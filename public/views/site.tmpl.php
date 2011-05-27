@@ -20,15 +20,13 @@
    </header>  
     
    <div data-role="content">
-      <ul data-role="listview" data-theme="c" data-dividertheme="d" data-counttheme="e">
+      <ul data-role="listview">
         <?php if ($feed->query->count > 0) { ?>
           <?php foreach($feed->query->results->item as $item) { ?>  
               <li>  
-                <h2>  
-                   <a href="article.php?siteName=<?php echo $siteName;?>&origLink=<?php echo urlencode($item->guid->content); ?>">  
-                     <?php echo $item->title; ?>  
-                   </a>  
-                </h2>  
+                 <a href="article.php?siteName=<?php echo $siteName;?>&origLink=<?php echo urlencode($item->guid->content); ?>">  
+                   <?php echo $item->title; ?>  
+                 </a>  
                 <!--span class="ui-li-count"><?php echo $item->comments[1]; ?> </span-->  
              </li>  
           <?php } ?>
