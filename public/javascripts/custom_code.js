@@ -8,6 +8,7 @@ $(document).ready(function() {
   //   return false;
   // });
   
+/*
   $( '[data-role=page]' ).live('pageshow', function(event){
     //console.log(event.target);
     var $et = $( event.target ), pageID = '#location';
@@ -20,5 +21,6 @@ $(document).ready(function() {
       $('#map').gMap(options);
     }
   });
+*/
 });
 

@@ -20,18 +20,20 @@
    </header>  
     
    <div data-role="content">
-      <ul data-role="listview">
-        <?php if ($feed->query->count > 0) { ?>
-          <?php foreach($feed->query->results->item as $item) { ?>  
+     <?php if ($feed->query->count > 0) { ?>
+       <ul data-role="listview">
+         <?php foreach($feed->query->results->item as $item) { ?>  
               <li>  
                  <a href="article.php?siteName=<?php echo $siteName;?>&origLink=<?php echo urlencode($item->guid->content); ?>">  
                    <?php echo $item->title; ?>  
                  </a>  
                 <!--span class="ui-li-count"><?php echo $item->comments[1]; ?> </span-->  
              </li>  
-          <?php } ?>
-        <?php } ?>
-      </ul>  
+         <?php } ?>
+       </ul>
+     <?php } else { ?>
+     	<span>No articles could be found at this time. Check back soon.</span>
+	<? } ?>
    </div>  
   
    <footer data-role="footer" class="<?php echo $siteName; ?>">  
