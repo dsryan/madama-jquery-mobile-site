@@ -22,5 +22,19 @@ $(document).ready(function() {
     }
   });
 */
+
+$( '[data-role=page]' ).live('pageshow', function(event){
+  //console.log(event.target);
+  var $et = $( event.target ), pageID = '#location';
+  if ( $et.is( pageID )  || $et.children(0).is( pageID ) ) {
+    var latlng = new google.maps.LatLng(39.991029,-74.149132);
+    $('#map').gmap({'zoom': 16, 'center': latlng, 
+      'callback': function () {
+        $('#map').gmap('addMarker', {'position': latlng, 'title': 'Madama Jiu-Jitsu Academy'});
+      }
+    });
+  }
+});
+
 });
 
