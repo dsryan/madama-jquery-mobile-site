@@ -32,7 +32,7 @@ else
   
 // Re-cache every three hours  
 if( !file_exists($cache) || filemtime($cache) < (time() - 10800) ) {
-  //echo "getting feed and recreating cache file: $cache";
+  // echo "getting feed and recreating cache file: $cache";
   if ( !file_exists(dirname(__FILE__) . '/cache') ) {  
     mkdir(dirname(__FILE__) . '/cache', 0777);  
   }
