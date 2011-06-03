@@ -1,7 +1,8 @@
 verbose(true)
 
-TARGET = '/Users/dennisryan/Sites/madama'
+TARGET = '/Users/dryan/Sites/madama'
 directory TARGET
+directory TARGET+"/cache"
 
 task :default => :run
 
@@ -19,12 +20,11 @@ task :deploy => TARGET do
   
   cp_r 'public/.', TARGET
   
-  Rake::Task["touch_cache"].execute
+  # Rake::Task["touch_cache"].execute #does not run dependencies
+  Rake::Task["touch_cache"].invoke #runs dependencies!
 end
 
-task :touch_cache => TARGET+"/cache" do
-  mkdir TARGET+"/cache"
-  
+task :touch_cache => TARGET+"/cache" do  
   sh %{chmod 777 #{TARGET}/cache}
   #change the datetime of cache file to prior day
   FileList[TARGET+'/cache/**/*'].each do |cache_file|
