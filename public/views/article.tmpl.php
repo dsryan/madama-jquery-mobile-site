@@ -15,16 +15,16 @@
 <div data-role="page">  
   
    <header data-role="header" class="<?php echo $siteName; ?>">  
-      <h1> <?php echo 'News'; ?> </h1>  
+      <h1> <?php echo ucwords($category); ?> </h1>  
    </header>  
   
    <div data-role="content">  
-        <h1> <?php echo $feed->title; ?> </h1>  
-        <div> <?php echo $feed->encoded; ?> </div>  
+        <h1> <?php echo $article->title; ?> </h1>  
+        <div> <?php echo $article->encoded; ?> </div>  
    </div>  
   
    <footer data-role="footer" class="<?php echo $siteName; ?>">  
-      <h4> <a href="<?php echo $feed->guid->content;?>"> Read on <?php echo 'Madama JJ'; ?></a></h4>  
+      <h4> <a href="<?php echo $article->guid->content;?>"> Read on <?php echo 'Madama JJ'; ?></a></h4>  
    </footer>  
 </div>  
   

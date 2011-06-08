@@ -24,7 +24,7 @@
        <ul data-role="listview">
          <?php foreach($feed->query->results->item as $item) { ?>  
               <li>  
-                 <a href="article.php?siteName=<?php echo $siteName;?>&origLink=<?php echo urlencode($item->guid->content); ?>">  
+                 <a href="article.php?siteName=<?php echo $siteName;?>&category=<?php echo $category?>&origLink=<?php echo urlencode($item->guid->content); ?>">  
                    <?php echo $item->title; ?>  
                  </a>  
                 <!--span class="ui-li-count"><?php echo $item->comments[1]; ?> </span-->  
