@@ -1,10 +1,12 @@
 <!DOCTYPE html>  
 <html>  
-   <head>  
-   <meta charset="utf-8">  
-   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />  
-  
-   <title> Madama Jiu-Jitsu Academy </title>   
+	<head>  
+  <meta charset="utf-8">  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />  
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+	
+  <title> Madama Jiu-Jitsu Academy </title>   
   
    <script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
    <script src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
