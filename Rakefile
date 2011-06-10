@@ -1,6 +1,6 @@
 verbose(true)
 
-TARGET = '/Users/dennisryan/Sites/madama'
+TARGET = ENV['HOME']+'/Sites/madama'
 directory TARGET
 directory TARGET+"/cache"
 

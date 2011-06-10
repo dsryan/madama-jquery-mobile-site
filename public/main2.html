@@ -11,22 +11,92 @@
 
 	<script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
 
-	<script src="http://code.jquery.com/jquery.min.js"></script>
-	<script src="http://code.jquery.com/ui/1.8.13/jquery-ui.min.js" type="text/javascript"></script>
-	<!-- http://code.google.com/p/jquery-ui-map/ -->
-	<script src="javascripts/jquery.ui.map.js" type="text/javascript"></script>
-  <script src="javascripts/modernizr.min.js"></script>
+  <!-- For Production Use -->
+  <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+  <script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script> -->
 
-  <script src="javascripts/custom_code.js"></script>
-  <script src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
-  
+  <!-- Latest Nightly Builds -->
+  <link href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" rel="stylesheet" type="text/css" />
+  <script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+  <script>
+  $(document).bind("mobileinit", function() {
+    //apply overrides here
+    //$.mobile.addBackBtn = true;
+    $.mobile.page.prototype.options.addBackBtn = true;
+  });
+  </script>
+  <script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+
+  <!-- For Mapping: http://code.google.com/p/jquery-ui-map/ -->
+	<script src="http://code.jquery.com/ui/1.8.13/jquery-ui.min.js" type="text/javascript"></script>
+	<script src="javascripts/jquery.ui.map.js" type="text/javascript"></script>
+	
+	<!-- Old mapping API I was using -->
   <!--script type="text/javascript" src="javascripts/jquery.gmap-1.1.0-min.js"></script-->
+  
+  <!-- modernizr - testing it out, not sure i need it as of yet -->
+  <!--script src="javascripts/modernizr.min.js"></script-->
+
+  <script src="javascripts/madama.js"></script>
 
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
   <link rel="apple-touch-startup-image" href="images/startup.png">
   <link rel="apple-touch-icon" href="apple-touch-icon-precomposed.png"/>
+  <style>
+    /* Desktop Browser ----------- */
+    #academyImage { max-width: 100%; height: auto; }
+    #wrapper {
+      text-align:center;
+    }
+    #sidebar {
+      text-align:center;
+    }
+  /* Smartphones (portrait and landscape) ----------- */
+  @media only screen
+  and (min-device-width : 320px)
+  and (max-device-width : 480px) {
+  /* Styles */
+    #academyImage { max-width: 100%; height: auto; }
+    #wrapper {
+      text-align:center;
+    }
+    #sidebar {
+      text-align:center;
+    }
+  }
+  /* Smartphones (landscape) ----------- */
+  @media only screen
+  and (min-width : 321px) {
+  /* Styles */
+    #academyImage { 
+      width:50%;
+      float:left;
+      margin-right:3%; 
+    }
+    #sidebar {
+      width: 45%;
+      float: left;
+    }
+  }
+  /* Smartphones (portrait) ----------- */
+  @media only screen
+  and (max-width : 320px) {
+  /* Styles */
+    #academyImage {
+      float:none; 
+    }
+    #sidebar {
+      width: 100%;
+      float: none;
+    }
+  }
+
+  </style>
+  
 </head>
 <body>
   <div data-role="page">
@@ -42,8 +112,8 @@
       </ul>
       <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="a">
       	<li data-role="list-divider">Contact Us</li>
-      	<li><a href="address.html">Location of Academy</a></li>
-      	<li class="clicker"><a href="http://www.madamajj.com" rel="external">Visit MadamaJJ website</a></li>
+      	<li><a href="address.html">Academy Location</a></li>
+      	<li><a href="http://www.madamajj.com" rel="external">Go to MadamaJJ website!</a></li>
       </ul>
     </div>
   </div>

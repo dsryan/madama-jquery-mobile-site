@@ -1,22 +1,24 @@
 <!DOCTYPE html>  
 <html>
 <head>
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />  
-  <meta name="apple-mobile-web-app-capable" content="yes" />
 </head>
 <body>
-  <div id="address" data-role="page" style="width:100%; height:100%;">
-    <div data-role="header"> 
+  <div id="address" data-role="page">
+    <header data-role="header"> 
   		<h1>Address</h1> 
-  	</div>
-    <div data-role="content" style="text-align:center;width:100%; height:100%; padding:0;">
-				<img src="images/academy_front1.jpg" style="margin-top:10px;" width="300px" height="auto">
-					      1174 Fischer Blvd.<br>
-					      Toms River, NJ 08753<br>
-			<!-- <a href="tel:7325047423" data-role="button">Call Us<br>(732) 504-7423</a>
-      <a href="location.html" data-role="button" data-iconpos="top" data-icon="home" data-theme="b">View Map</a> -->
+  	</header>
+    <div data-role="content">
+        <div id="wrapper">
+          <img id="academyImage" src="images/academy_front1.jpg">
+
+          <div id="sidebar">
+            <div style="margin-top:10px;">1174 Fischer Blvd.<br>Toms River, NJ 08753</div>
+            <a href="tel:7325047423" data-role="button">Call Us<br>(732) 504-7423</a>
+            <a href="location.html" data-role="button">View Map</a>
+          </div>
+        </div>
     </div>
-		<footer data-role="footer" class="<?php echo $siteName; ?>">  
+		<footer data-role="footer">  
 	     <h4 style="font-size:smaller">www.madamajj.com</h4>  
 	  </footer>
   </div>

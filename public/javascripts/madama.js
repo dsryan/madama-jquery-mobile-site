@@ -1,7 +1,3 @@
-$(document).bind("mobileinit", function() {
-  //apply overrides here
-});
-
 $(document).ready(function() {
   // $("li.clicker").click(function(){
   //   window.location=$(this).find("a").attr("href");
@@ -22,19 +18,22 @@ $(document).ready(function() {
     }
   });
 */
+  $('#location').live('pageshow', function(e){
+    //console.log('here');
+  });
 
-$( '[data-role=page]' ).live('pageshow', function(event){
-  //console.log(event.target);
-  var $et = $( event.target ), pageID = '#location';
-  if ( $et.is( pageID )  || $et.children(0).is( pageID ) ) {
-    var latlng = new google.maps.LatLng(39.991029,-74.149132);
-    $('#map').gmap({'zoom': 16, 'center': latlng, 
-      'callback': function () {
-        $('#map').gmap('addMarker', {'position': latlng, 'title': 'Madama Jiu-Jitsu Academy'});
-      }
-    });
-  }
-});
+  $( '[data-role=page]' ).live('pageshow', function(event){
+    //console.log(event.target);
+    var $et = $( event.target ), pageID = '#location';
+    if ( $et.is( pageID )  || $et.children(0).is( pageID ) ) {
+      var latlng = new google.maps.LatLng(39.991029,-74.149132);
+      $('#map').gmap({'zoom': 16, 'center': latlng, 
+        'callback': function () {
+          $('#map').gmap('addMarker', {'position': latlng, 'title': 'Madama Jiu-Jitsu Academy'});
+        }
+      });
+    }
+  });
 
 });
 
