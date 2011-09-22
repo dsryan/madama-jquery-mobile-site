@@ -24,7 +24,10 @@
    <div data-role="content">
      <?php if ($feed->query->count > 0) { ?>
        <ul data-role="listview">
-         <?php foreach($feed->query->results->item as $item) { ?>  
+         <?php $items = $feed->query->results->item; ?>
+         <!--  when the feed comes back with only one item its not an array so we need to turn it into an array -->
+         <?php if (!is_array($items)) { $items = array($items); } ?>
+         <?php foreach($items as $item) { ?>  
               <li>  
                  <a href="article.php?siteName=<?php echo $siteName;?>&category=<?php echo $category?>&origLink=<?php echo urlencode($item->guid->content); ?>">  
                    <?php echo $item->title; ?>  

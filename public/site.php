@@ -32,9 +32,11 @@ else
   
 // Re-cache every three hours  
 if( !file_exists($cache) || filemtime($cache) < (time() - 10800) ) {
-  // echo "getting feed and recreating cache file: $cache";
+  //echo "getting feed and recreating cache file: $cache";
   if ( !file_exists(dirname(__FILE__) . '/cache') ) {  
-    mkdir(dirname(__FILE__) . '/cache', 0777);  
+    if (!mkdir(dirname(__FILE__) . '/cache', 0777)) {
+      die("unable to create directory ("+dirname(__FILE__) . '/cache'+")");
+    }
   }
   // grab the site's RSS feed, via YQL
   // YQL query (SELECT * from feed ... ) // Split for readability    
@@ -55,9 +57,10 @@ if( !file_exists($cache) || filemtime($cache) < (time() - 10800) ) {
 
   // If something was returned, cache  
   if ( is_object($feed) && $feed->query->count ) {  
-    $cachefile = fopen($cache, 'w');  
-    fwrite($cachefile, $feed_string);  
-    fclose($cachefile);  
+    $cachefile = fopen($cache, 'w')
+      or exit("unable to open file ($cache)");
+    fwrite($cachefile, $feed_string);
+    fclose($cachefile);
   }  
 } else {
   // We already have local cache. Use that instead.  
