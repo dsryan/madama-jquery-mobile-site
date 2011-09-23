@@ -24,7 +24,7 @@
    </div>  
   
    <footer data-role="footer" class="<?php echo $siteName; ?>">  
-      <h4> <a href="<?php echo $article->guid->content;?>"> Read on <?php echo 'Madama JJ'; ?></a></h4>  
+      <h4 style="font-size:small"> <a href="<?php echo $article->guid->content;?>"> Read on <?php echo 'Madama JJ'; ?></a></h4>  
    </footer>  
 </div>  
   

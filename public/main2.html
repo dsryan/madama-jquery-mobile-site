@@ -98,9 +98,36 @@
       float: none;
     }
   }
-
+  
+  #fullscreenNote {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width:100%;
+    text-align: center;
+    padding: 10px 0px;
+    display: none;
+    background-color: rgba(68, 68, 68, .9);
+    font-weight: bold;
+    border-top: 1px solid white;
+    text-shadow: 0 1px 0 beige;
+    color: #222;
+  }
+  #fullscreenNote em {
+    color: #C00;
+    display: block ;
+    font-size: 20px ;
+    font-weight: bold ;
+    line-height: 26px ;
+  }
   </style>
   
+  <script type="text/javascript">
+  if ('standalone' in navigator && !navigator.standalone && (/iphone|ipod|ipad/gi).test(navigator.platform) && (/Safari/i).test(navigator.appVersion)) {
+  	document.write('<link rel="stylesheet" href="/stylesheets/add2home.css">');
+  	document.write('<script type="application/javascript" src="/javascripts/add2home.js"><\/s' + 'cript>');
+  }
+  </script>
 </head>
 <body>
   <div data-role="page">
@@ -120,8 +147,11 @@
       	<li><a href="http://www.madamajj.com" rel="external">Go to MadamaJJ website!</a></li>
       </ul>
     </div>
+    <div id="fullscreenNote">
+      <em>Go Full Screen!</em>
+      <span>Use "Add to Home Screen" Feature</span>
+    </div>
   </div>
-</div>
   
 </body>
 </html>
