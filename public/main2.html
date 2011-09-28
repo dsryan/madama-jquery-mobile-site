@@ -99,27 +99,8 @@
     }
   }
   
-  #fullscreenNote {
-    position: fixed;
-    left: 0px;
-    bottom: 0px;
-    width:100%;
-    text-align: center;
-    padding: 10px 0px;
-    display: none;
-    background-color: rgba(68, 68, 68, .9);
-    font-weight: bold;
-    border-top: 1px solid white;
-    text-shadow: 0 1px 0 beige;
-    color: #222;
-  }
-  #fullscreenNote em {
-    color: #C00;
-    display: block ;
-    font-size: 20px ;
-    font-weight: bold ;
-    line-height: 26px ;
-  }
+  img, object, embed { max-width: 100% }
+  
   </style>
   
   <script type="text/javascript">
@@ -127,8 +108,32 @@
   	document.write('<link rel="stylesheet" href="/stylesheets/add2home.css">');
   	document.write('<script type="application/javascript" src="/javascripts/add2home.js"><\/s' + 'cript>');
   }
-  </script>
+   
+  // var fixgeometry = function() {
+  //     /* Some orientation changes leave the scroll position at something
+  //      * that isn't 0,0. This is annoying for user experience. */
+  //     scroll(0, 0);
+  // 
+  //     /* Calculate the geometry that our content area should take */
+  //     var header = $(".header:visible");
+  //     var footer = $(".footer:visible");
+  //     var content = $(".content:visible");
+  //     var viewport_height = $(window).height();
+  //     
+  //     var content_height = viewport_height - header.outerHeight() - footer.outerHeight();
+  //     
+  //     /* Trim margin/border/padding height */
+  //     content_height -= (content.outerHeight() - content.height());
+  //     content.height(content_height);
+  //   }; /* fixgeometry */
+  // 
+  //   $(document).ready(function() {
+  //     $(window).bind("orientationchange resize pageshow", fixgeometry);
+  //   });
+
+   </script>
 </head>
+
 <body>
   <div data-role="page">
     <div data-role="header" style="line-height:40px;">
@@ -144,10 +149,10 @@
       <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="a">
       	<li data-role="list-divider">Contact Us</li>
       	<li><a href="address.html">Academy Location</a></li>
-      	<li><a href="http://www.madamajj.com" rel="external">Go to MadamaJJ website!</a></li>
+      	<li><a href="http://www.madamajj.com/?site=1" rel="external">Go to MadamaJJ website!</a></li>
       </ul>
     </div>
-  </div>
-  
+  </div>  
 </body>
+
 </html>

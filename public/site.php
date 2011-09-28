@@ -29,7 +29,7 @@ if (empty($category))
   $cache = dirname(__FILE__) . "/cache/news";
 else
   $cache = dirname(__FILE__) . "/cache/$category";
-  
+
 // Re-cache every three hours  
 if( !file_exists($cache) || filemtime($cache) < (time() - 10800) ) {
   //echo "getting feed and recreating cache file: $cache";

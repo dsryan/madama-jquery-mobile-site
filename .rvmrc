@@ -1,1 +1,5 @@
-rvm ruby-1.8.7@madama_mobile_app
+rvm use ruby-1.8.7@madama_mobile_app
+
+if ! command -v bundle ; then
+  gem install bundler
+fi
