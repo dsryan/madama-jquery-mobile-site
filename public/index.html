@@ -10,7 +10,7 @@
   <!-- script type="text/javascript" src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAA-k7GzvVFUWWR0i58w3L6axQ_88BRgG2SbMa3ZO_Bh6F4-ofCEhRwBh2JAq-PAOSbX2bltMgJ9PTLsQ"></script -->
 
 	<script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
-
+	
   <!-- For Production Use -->
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
 	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
@@ -99,7 +99,34 @@
     }
   }
   
-  img, object, embed { max-width: 100% }
+  img, object, embed { max-width: 100% }  /*responsive web design to scale images and videos*/
+  
+  .secondary-header {
+    background: none no-repeat scroll 0 0 transparent;
+    border-bottom: 10px solid #000000;
+    position: relative;
+	}
+  .secondary-header aside {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.6);
+    color: #FFFFFF;
+    left: 55%;
+    overflow: hidden;
+    position: absolute;
+    text-shadow: none;
+    width: 45%;
+	}
+	.secondary-header aside p {
+		font-size: 12px;
+    line-height: 1.5em;
+    margin: 10px 10px 0 15px;
+    text-shadow: 0 0 1px transparent;
+	}
+	.secondary-header header, .secondary-header aside {
+			display: inline-block;
+	}
+	.secondary-header, .secondary-header header, .secondary-header aside {
+			height: 164px;
+	}
   
   </style>
   
@@ -139,9 +166,18 @@
     <div data-role="header" style="line-height:40px;">
   		<img src="images/madama-header.png" style="vertical-align:middle"/>
   	</div>
-    <div data-role="content">   
+    <div data-role="content">
+    	<section class="secondary-header" style="background-image: url('images/josh_at_school_sm.jpg');">
+				<header>
+					<h3></h3>
+					<h4></h4>
+				</header>
+				<aside>
+					<p>"You'll learn jiu-jitsu from close to its source at Madama Jiu-Jitsu"</p><p> - Matt Serra, Black Belt and Former UFC Champion</p>
+				</aside>
+			</section>
       <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="a">
-		<li data-role="list-divider">Articles</li>
+				<li data-role="list-divider">Articles</li>
       	<li><a href="site.php?category=news">Latest News</a></li>
       	<li><a href="site.php?category=events">Events</a></li>
       	<li><a href="site.php?category=techniques">Techniques</a></li>

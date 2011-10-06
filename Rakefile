@@ -7,7 +7,7 @@ directory TARGET+"/cache"
 task :default => :run
 
 task :run => :deploy do
-  sh %{open '/Applications/Google Chrome.app' http://dhcp-10-111-55-50.kewr1.m.vonagenetworks.net/~dryan/madama}
+  sh %{open '/Applications/Google Chrome.app' http://dhcp-10-111-53-61.kewr1.m.vonagenetworks.net/~dryan/madama}
 end
 
 task :deploy => TARGET do
